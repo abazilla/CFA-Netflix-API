@@ -3,9 +3,7 @@ const prompt = require('prompt');
 
 function getNetflix(actor) {
   axios.get(`http://netflixroulette.net/api/api.php?actor=${actor}`).then(function (response) {
-    //  console.log(response["data"][0]);
     for(var i = 0; i < response["data"].length; i++) {
-      // console.log(response["data"]);
       console.log("Title:", response["data"][i]["show_title"]);
       console.log("Year:", response["data"][i]["release_year"]);
       console.log("Cast:", response["data"][i]["show_cast"]);
